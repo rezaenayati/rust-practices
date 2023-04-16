@@ -12,15 +12,21 @@ impl Rectangle {
     fn can_hold(&self, another_rect: &Rectangle) -> bool {
         self.width > another_rect.width && self.height > another_rect.height
     }
+
+    fn squire(size: u32) -> Rectangle {
+        Rectangle { width: size, height: size }
+    }
 }
 
 fn main() {
     let rect1 = Rectangle { width: 30, height:43 };
     let rect2 = Rectangle { width: 10, height:83 };
     let rect3 = Rectangle { width: 15, height:23 };
+    let squire = Rectangle::squire(9);
     println!("rect1 is {:#?}", &rect1);
     println!("rect2 is {:#?}", &rect2);
     println!("rect3 is {:#?}", &rect3);
+    println!("squire is {:#?}", &squire);
 
     println!(
         "The area1 of the rectangle is {} square pixels.",
